@@ -2,6 +2,7 @@
 /dist
 /node_modules
 /movie-backend/node_modules
+/movie-frontend/node_modules
 
 # Logs
 logs
