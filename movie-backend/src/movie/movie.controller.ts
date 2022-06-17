@@ -10,17 +10,20 @@ import {
 } from '@nestjs/common';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
+import { MovieService } from './movie.service';
 
 @Controller('movie')
 export class MovieController {
+  constructor(private movieService: MovieService) {}
+
   @Get()
   findAll(@Query() query: any) {
-    return `This action returns all cats (limit: ${query.limit} items)`;
+    return this.movieService.findAll();
   }
 
   @Post()
-  async create(@Body() createMovieDto: CreateMovieDto): Promise<string> {
-    return 'This action adds a new cat';
+  async create(@Body() createMovieDto: CreateMovieDto): Promise<void> {
+    return this.movieService.create(createMovieDto);
   }
 
   @Get(':id')
