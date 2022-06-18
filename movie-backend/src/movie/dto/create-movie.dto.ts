@@ -1,5 +1,7 @@
 export class CreateMovieDto {
   name: string;
-  genre: string;
+  category: string;
   duration: number;
+  image: string;
+  link: string;
 }

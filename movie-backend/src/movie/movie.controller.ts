@@ -18,7 +18,7 @@ export class MovieController {
 
   @Get()
   findAll(@Query() query: any) {
-    return this.movieService.findAll();
+    // return this.movieService.findAll();
   }
 
   @Post()
